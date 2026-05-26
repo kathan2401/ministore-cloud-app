@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>MiniStore Cloud Outreach</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+      <div class="sidebar">
+          <div class="logo">
+              <h2>MiniStore</h2>
+              <p>Cloud AI Agent</p>
+          </div>
+
+          <div class="nav-section">
+              <h3>DISCOVER LEADS</h3>
+              <p class="subtitle">Scrape 50 users automatically</p>
+              <select id="scrape-niche" style="margin-bottom: 0.5rem;">
+                  <option value="boutique">Boutique / Clothing</option>
+                  <option value="food">Food / Tiffin</option>
+                  <option value="craft">Craft / Resin</option>
+              </select>
+              <button id="find-leads-btn" class="btn primary">Fetch 50 Users</button>
+              <div id="loader" class="hidden" style="color: var(--primary-color); font-size: 0.8rem; margin-top: 0.5rem; text-align: center;">Bot is working...</div>
+          </div>
+
+          <div class="nav-section" style="margin-top: 2rem;">
+              <h3>CLOUD SETTINGS</h3>
+              <p class="subtitle">Enter credentials to run agent</p>
+            <input type="text" id="ig-username" placeholder="IG Username" style="margin-bottom: 0.5rem; width: 100%;">
+              <input type="password" id="ig-password" placeholder="IG Password" style="margin-bottom: 0.5rem; width: 100%;">
+              <input type="password" id="gemini-key" placeholder="Gemini API Key" style="margin-bottom: 0.5rem; width: 100%;">
+              <button id="save-settings-btn" class="btn secondary small" style="width: 100%;">Save Credentials</button>
+          </div>
+      </div>
+
+      <main class="content">
+          <header>
+              <h1>AI Qualified Leads</h1>
+              <p>Review the AI-generated messages and send directly from your phone.</p>
+          </header>
+
+          <section class="tracker-section">
+              <div class="table-container">
+                  <table id="outreach-table">
+                      <thead>
+                          <tr>
+                              <th>Seller Info</th>
+                              <th>AI Message</th>
+                              <th>Action</th>
+                          </tr>
+                      </thead>
+                      <tbody id="leads-tbody">
+                          <!-- Populated by JS -->
+                          <tr><td colspan="3" style="text-align: center; color: var(--text-muted); padding: 2rem;">No leads fetched yet. Tap 'Fetch 50 Users' to start!</td></tr>
+                      </tbody>
+                  </table>
+              </div>
+          </section>
+      </main>
+
+      <script src="/static/script.js"></script>
+  </body>
+  </html>
